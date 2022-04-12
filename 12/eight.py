@@ -3,7 +3,6 @@
 
 XAXIS = "ABCDEFGHIJKLMNO"
 YAXIS = "12345678"
-
 FORBIDDEN = {
     "B1", "C1", "D1", "L1", "M1", "N1",
     "B3", "C3", "D3", "E3", "F3", "J3", "K3", "L3", "M3", "N3"
@@ -12,7 +11,6 @@ FORBIDDEN = {
     "C6", "M6"
     "B7", "C7", "D7", "E7", "F7", "J7", "K7", "L7", "M7", "N7"
 }
-
 
 def move(position, direction):
     i = XAXIS.index(position[0])
@@ -36,7 +34,6 @@ def move(position, direction):
 
     return position
 
-
 def can_move(position, direction):
     if position[0] == XAXIS[0] and direction == "left":
         return False
@@ -53,7 +50,6 @@ def can_move(position, direction):
     new_position = move(position, direction)
     return new_position not in FORBIDDEN
 
-
 def execute(start):
     position = start
     while can_move(position, "down"):
@@ -69,7 +65,6 @@ def execute(start):
 
     return can_move(position, "right")
 
-
 if __name__ == "__main__":
     result = 0
 
@@ -81,5 +76,4 @@ if __name__ == "__main__":
 
             if execute(current):
                 result += 1
-
     print(result)
